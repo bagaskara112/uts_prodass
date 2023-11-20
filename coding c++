@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Input data karyawan
+    int golongan;
+    double jamKerja;
+
+    cout << "Nanda Nalendra Bagaskara " << endl;
+    cout << "Masukkan golongan kerja: ";cin >> golongan;
+
+    cout << "Masukkan jumlah jam kerja: ";cin >> jamKerja;
+
+    // Pembagian golongan
+    double upahPerJam;
+    switch (golongan) {
+    case 2:
+        upahPerJam = 35000;
+        break;
+    case 3:
+        upahPerJam = 50000;
+        break;
+    default:
+        cout << "Golongan kerja tidak valid" << endl;
+        return 1;  // Keluar program jika golongan tidak valid
+    }
+
+    cout << endl;
+    // Perhitungan upah dan uang lembur
+    double upah = jamKerja * upahPerJam;
+    double uangLembur = (jamKerja > 48) ? (jamKerja - 48) * 10000 : 0;
+
+    // Perhitungan gaji total
+    double gajiTotal = upah + uangLembur;
+
+    // Output hasil
+    cout << "Total Gaji total: Rp " << gajiTotal << endl;
+
+    return 0;
+}
